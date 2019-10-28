@@ -12,6 +12,17 @@ public class MainActivity extends AppCompatActivity {
     private final int SUBSTRACT = 2;
     private final int REMAINDER = 3;
     private final int MULTIPLY = 4;
+    private final int SIN = 5;
+    private final int LN = 6;
+    private final int COS = 7;
+    private final int LOG = 8;
+    private final int TAN = 9;
+    private final int SQUARE_ROOT = 10;
+    private final int PI = 11;
+    private final int EXPONENT = 12;
+    private final int COSECANT = 13;
+    private final int SECANT = 14;
+    private final int COTAN = 15;
 
     private TextView answerTextview;
 
@@ -56,10 +67,43 @@ public class MainActivity extends AppCompatActivity {
                 answerValue = firstValue / seondValue;
                 break;
             case REMAINDER:
-                answerValue = firstValue % seondValue;
+                answerValue = (int)(firstValue % seondValue);
                 break;
             case MULTIPLY:
                 answerValue = firstValue * seondValue;
+                break;
+            case SIN:
+                answerValue = (float)Math.sin(firstValue);
+                break;
+            case LN:
+                answerValue = (float)Math.log(firstValue);
+                break;
+            case COS:
+                answerValue = (float)Math.cos(firstValue);
+                break;
+            case LOG:
+                answerValue = (float)Math.log10(firstValue);
+                break;
+            case TAN:
+                answerValue = (float)Math.tan(firstValue);
+                break;
+            case SQUARE_ROOT:
+                answerValue = (float)Math.sqrt(firstValue);
+                break;
+            case PI:
+                answerValue = (float)Math.PI * firstValue;
+                break;
+            case EXPONENT:
+                answerValue = (float)Math.pow(firstValue, seondValue);
+                break;
+            case COSECANT:
+                answerValue = (int)(1 / Math.sin(firstValue));
+                break;
+            case SECANT:
+                answerValue = (int)(1 / Math.cos(firstValue));
+                break;
+            case COTAN:
+                answerValue = (int)(1 / Math.tan(firstValue));
                 break;
         }
         answerTextview.setText(answerValue +"");
@@ -141,6 +185,46 @@ public class MainActivity extends AppCompatActivity {
             case R.id.remainder_button:
                 setOperator(REMAINDER);
                 break;
+
+            case R.id.sin_button:
+                setOperator(SIN);
+                break;
+
+            case R.id.ln_button:
+                setOperator(LN);
+                break;
+
+            case R.id.cos_button:
+                setOperator(COS);
+                break;
+
+            case R.id.log_button:
+                setOperator(LOG);
+                break;
+
+            case R.id.tan_button:
+                setOperator(TAN);
+                break;
+
+            case R.id.sq_button:
+                setOperator(SQUARE_ROOT);
+                break;
+
+            case R.id.pi_button:
+                setOperator(PI);
+                break;
+
+            case R.id.exp_button:
+                setOperator(EXPONENT);
+                break;
+            case R.id.cosec_button:
+                setOperator(COSECANT);
+                break;
+            case R.id.sec_button:
+                setOperator(SECANT);
+                break;
+            case R.id.cot_button:
+                setOperator(COTAN);
         }
     }
 }
